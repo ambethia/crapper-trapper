@@ -12,13 +12,12 @@ gem 'stimulus-rails', '>= 0.4.0'
 gem 'tailwindcss-rails', '>= 0.4.3'
 gem 'turbo-rails', '>= 0.7.11'
 
-gem 'jbuilder', '~> 2.7'
-
 gem 'bootsnap', '>= 1.4.4', require: false
-
+gem 'jbuilder', '~> 2.7'
 gem 'rexml'
 
 gem 'omniauth-google-oauth2'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'debug', '>= 1.0.0', platforms: %i[mri mingw x64_mingw]
