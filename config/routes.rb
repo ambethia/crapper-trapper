@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # Authentication
+  get 'sign_out', to: 'sessions#destroy'
+  get 'auth/failure', to: redirect('/')
+  match 'auth/:provider/callback', to: 'sessions#create', via: %i[get post]
 
-  # Almost every application defines a route for the root path ("/") at the top of this file.
-  # root "articles#index"
+  get 'dashboard', to: 'home#dashboard'
+
+  root 'home#index'
 end
