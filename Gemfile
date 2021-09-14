@@ -18,6 +18,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'rexml'
 
+gem 'omniauth-google-oauth2'
+
 group :development, :test do
   gem 'debug', '>= 1.0.0', platforms: %i[mri mingw x64_mingw]
 end
