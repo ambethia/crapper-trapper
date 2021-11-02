@@ -1,0 +1,12 @@
+<%= turbo_frame_tag sender do %>
+  <div class="p-2 my-2 flex justify-between border-b <%= sender.allowed? ? 'bg-green-300' : 'bg-red-300' %>">
+    <div><%= sender.address %></div>
+    <div>
+    <%= button_to 'delete', sender, method: :delete %>
+    </div>
+  </div>
+<% end %>
+
+<%= turbo_frame_tag sender do %>
+  Hello, <%= sender.address %>
+<% end %>

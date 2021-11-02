@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  address: MyString
+  domain: MyString
+  list: 1
+  is_for_domain: false
+
+two:
+  user: two
+  address: MyString
+  domain: MyString
+  list: 1
+  is_for_domain: false

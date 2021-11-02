@@ -1,3 +1,29 @@
 <p>Hello, <%= current_user.name %></p>
-
 <p><%= link_to "Sign Out", sign_out_path %></p>
+
+<div class="border-t">
+  <% @messages.each do |message| %>
+  <div class="p-2 border-b">
+    <div class="font-bold"><%= message.subject %></div>
+    <div class="flex justify-between items-center">
+      <div><%= message.sender_name %></div>
+      <div><%= message.sender_address %></div>
+      <div><%= time_ago_in_words message.sent_at %></div>
+      <div class="flex">
+      <%= form_for(Sender.new) do |f| %>
+        <%= f.hidden_field :list, value: :allowed %>
+        <%= f.hidden_field :address, value: message.sender_address %>
+        <button type="submit" class="m-1 p-1 bg-green-300 text-green-800 rounded">Allow</button>
+      <% end %>
+      <%= form_for(Sender.new) do |f| %>
+        <%= f.hidden_field :list, value: :blocked %>
+        <%= f.hidden_field :address, value: message.sender_address %>
+        <button type="submit" class="m-1 p-1 bg-red-300 text-red-800 rounded">Block</button>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%== pagy_nav(@pagy) %>

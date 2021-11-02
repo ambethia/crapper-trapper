@@ -1,0 +1,6 @@
+<%= turbo_stream_from :senders %>
+<%= turbo_frame_tag :senders do %>
+  <div class="m-2">
+    <%= render @senders %>
+  </div>
+<% end %>

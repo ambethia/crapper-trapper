@@ -16,7 +16,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'rexml'
 
+gem 'google-api-client'
 gem 'omniauth-google-oauth2'
+gem 'pagy'
 gem 'sidekiq'
 
 group :development, :test do

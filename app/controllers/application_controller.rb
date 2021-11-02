@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
   def authenticate!
     redirect_to :root, notice: 'Authentication Required' unless signed_in?
   end

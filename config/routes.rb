@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'home#dashboard'
 
+  resources :senders, only: %i[index create destroy]
+
   mount Sidekiq::Web => '/sidekiq', :constraints => ->(request) { User.exists?(request.session[:user_id]) }
 
   root 'home#index'
